@@ -1,6 +1,6 @@
 - name: nginx playbook
   hosts: web
-  remote_user: root
+  become: true
   tasks:  
   - name: install nginx
     ansible.builtin.package:
