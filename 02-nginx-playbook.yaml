@@ -14,3 +14,16 @@
     ansible.builtin.service:
       name: nginx
       enabled: yes
+  - name: remove nginx root html
+    ansible.builtin.file:
+      path: /usr/share/nginx/html/
+      state: absent
+  - name: Download code
+    ansible.builtin.get_url:
+      url: https://roboshop-builds.s3.amazonaws.com/web.zip
+      dest: /tmp/web.zip
+  - name: Unarchive the code file 
+    ansible.builtin.unarchive:
+      src: /tmp/web.zip
+      dest: /usr/share/nginx/html
+      remote_src: yes
