@@ -18,11 +18,11 @@
     ansible.builtin.file:
       path: /usr/share/nginx/html/**
       state: absent
-  - name: Download code
+  - name: download code
     ansible.builtin.get_url:
       url: https://roboshop-builds.s3.amazonaws.com/web.zip
       dest: /tmp/web.zip
-  - name: Unarchive the code file 
+  - name: unarchive the code file 
     ansible.builtin.unarchive:
       src: /tmp/web.zip
       dest: /usr/share/nginx/html/

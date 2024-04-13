@@ -1,2 +1,7 @@
-[web]
-172.31.16.91
+[local]
+localhost
+
+[local:vars]
+Name="Bumrh" 
+Role="Bowler"
+Task="Bowling"

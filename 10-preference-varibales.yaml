@@ -1,0 +1,34 @@
+# Variables in play level
+- name: Variable
+  hosts: local
+  # vars:
+  #   Name: Royal
+  #   Role: Devops Engineer
+  #   Task: Ansible
+  # vars_files:
+  # - variables.yaml
+  # vars_prompt:
+  #   - name: Name
+  #     prompt: Enter you Name 
+  #     private: false 
+  #   - name: Role
+  #     prompt: Enter you Role 
+  #     private: false
+  #   - name: Task
+  #     prompt: Enter you Task 
+  #     private: false
+  tasks:
+  - name: variable example
+    # vars:
+    #   Name: Dravid 
+    #   Role: Coach
+    #   Task: Train
+    ansible.builtin.debug:
+      msg: "Myself {{Name}} , I am {{Role}} , I am Practicing {{Task}}"
+
+# 1. CMD
+# 2. Task
+# 3. File
+# 4. Prompt
+# 5. Play level
+# 6. Inventory
